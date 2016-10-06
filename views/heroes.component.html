@@ -1,0 +1,38 @@
+<h4 class="grey-text">My Heroes</h4>
+
+<div class="row">
+  <div class="col s7">
+    <ul class="collection">
+      <li *ngFor="let hero of heroes" (click)="onSelect(hero)"
+          [class.selected]="hero === selectedHero" class="collection-item row">
+          <div class="col s10">
+            <span>{{hero.id}}</span>
+            <span><b>{{hero.name}}</b></span>
+          </div>
+          <div class="col s1">
+            <button class="btn red white-text"
+              (click)="delete(hero); $event.stopPropagation()">
+              x
+            </button>
+          </div>
+      </li>
+    </ul>
+  </div>
+  
+  <div *ngIf="selectedHero" class="col s5">
+    <h2>
+      {{selectedHero.name | uppercase}} is my hero
+    </h2>
+    <button (click)="gotoDetail()" class="btn green">
+      View Details
+    </button>
+  </div>
+
+  <div class="col s12">
+    <h3>Add new hero</h3>
+    <label>Hero name:</label> <input #heroName />
+    <button (click)="add(heroName.value); heroName.value=''" class="right btn blue">
+      Add
+    </button>
+  </div>
+</div>
