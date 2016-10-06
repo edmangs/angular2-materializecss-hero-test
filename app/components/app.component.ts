@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 @Component({
   selector: 'my-app',
@@ -8,4 +9,8 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   title = 'Tour of Heroes';
+
+  constructor(af: AngularFire) {
+
+  }
 }
