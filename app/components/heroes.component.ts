@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 
 import { Hero } from '../entity/hero';
 import { HeroService } from '../services/hero.service';
+import {AngularFire, FirebaseObjectObservable} from 'angularfire2';
 
 @Component({
   moduleId: module.id,
@@ -12,7 +13,7 @@ import { HeroService } from '../services/hero.service';
 })
 
 export class HeroesComponent implements OnInit {
-  heroes: Hero[];
+  heroes: FirebaseObjectObservable<any>;
   selectedHero: Hero;
 
   constructor(

@@ -1,10 +1,12 @@
 <div id="search-component">
   <h4>Hero Search</h4>
   <input #searchBox id="search-box" (keyup)="search(searchBox.value)" placeholder="Search hero" />
-  <div>
-    <div *ngFor="let hero of heroes | async"
-         (click)="gotoDetail(hero)" class="search-result" >
-      {{hero.name}}
-    </div>
+  <div class="search">
+	<ul class="collection">
+	    <li *ngFor="let hero of heroes | async" 
+	         (click)="gotoDetail(hero)" class="search-result cursor-pointer collection-item" >
+	      {{hero.name}}
+	    </li>
+	</ul>
   </div>
 </div>

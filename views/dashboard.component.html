@@ -1,8 +1,8 @@
 <h4 class="grey-text">Top Heroes</h4>
 
 <div class="row col s12">
-  <div *ngFor="let hero of heroes" (click)="gotoDetail(hero)" class="col-1-4">
-    <div class="card-panel blue white-text col s3">
+  <div *ngFor="let hero of heroes | async	" (click)="gotoDetail(hero)" class="col-1-4">
+    <div class="card-panel blue white-text col s3 cursor-pointer">
       <h4 class="center-align">{{hero.name}}</h4>
     </div>
   </div>

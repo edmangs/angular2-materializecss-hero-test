@@ -5,6 +5,7 @@ import { Subject }           from 'rxjs/Subject';
 
 import { HeroSearchService } from '../services/hero-search.service';
 import { Hero } from '../entity/hero';
+import { AngularFire, FirebaseObjectObservable, FirebaseListObservable } from 'angularfire2';
 
 @Component({
   moduleId: module.id,
@@ -13,6 +14,7 @@ import { Hero } from '../entity/hero';
   //styleUrls: [ '../../css/hero-search.component.css' ],
   providers: [HeroSearchService]
 })
+
 export class HeroSearchComponent implements OnInit {
   heroes: Observable<Hero[]>;
   private searchTerms = new Subject<string>();

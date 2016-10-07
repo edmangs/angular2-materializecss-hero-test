@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 
 import { Hero } from '../entity/hero';
 import { HeroService } from '../services/hero.service';
+import {AngularFire, FirebaseObjectObservable} from 'angularfire2';
 
 @Component({
   moduleId: module.id,
@@ -13,7 +14,7 @@ import { HeroService } from '../services/hero.service';
 
 export class DashboardComponent implements OnInit {
 
-  heroes: Hero[] = [];
+  heroes: FirebaseObjectObservable<any>;
 
   constructor(
     private router: Router,
@@ -22,7 +23,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.heroService.getHeroes()
-      .then(heroes => this.heroes = heroes.slice(1, 5));
+      .then(heroes => this.heroes = heroes);
   }
 
   gotoDetail(hero: Hero): void {

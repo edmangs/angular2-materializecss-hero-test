@@ -1,3 +1,11 @@
 li.selected{
 	background: #ccc !important;
 }
+
+.cursor-pointer{
+	cursor: pointer;
+}
+
+.search ul>li:hover {
+    background: #ccc;
+}
